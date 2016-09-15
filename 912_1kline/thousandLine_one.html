@@ -84,8 +84,8 @@
 			var arr=[6,5,4,3,2,1,19,15];
 			var num=0;
 			var count=0
-			for(var i=0;i<arr.length;i++){
-				for(var j=0 ;j<arr.length;j++){
+			for(var i=1;i<arr.length;i++){
+				for(var j=0 ;j<arr.length-i;j++){
 					if(arr[j]>arr[j+1]){
 						var x=arr[j];
 						arr[j]=arr[j+1];
