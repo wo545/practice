@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js prototype __proto__</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function Student(sname){
+			this.name=sname;
+			this.age=18;
+		}
+		var fun= function() {};
+		var arr= [];arr.push(1);
+		var xiaoming  =  new Student("xiaoming");
+		console.log(xiaoming.name);
+		console.log(xiaoming.age);
+		console.log(xiaoming.prototype);
+		console.log(xiaoming.__proto__);
+		console.log(Student.prototype);
+		console.log(Student.__proto__);
+		console.log(fun.prototype);
+		console.log(fun.__proto__);
+		console.log(arr.prototype);
+		console.log(arr.__proto__);
+		var Person = function () { };
+		var p = new Person();
+		console.log(p.__proto__ === Person.prototype);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
