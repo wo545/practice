@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文件上传</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById('file_upload').addEventListener('change',function() {
+			var file =this.files[0];
+			console.log(file);
+			console.log(file.name);
+			console.log(file.lastModified);
+			console.log(file.size);
+			console.log(file.type);
+			var reader = new FileReader();
+			 var x=reader.readAsDataURL(file);
+			reader.onload=function(e){
+				console.log(e);
+				console.log(e.target.result);
+				document.getElementById('image').style.backgroundImage ='url('+e.target.result+')';
+			}
+		});
+	};
+	</script>
+</head>
+<body>
+	<input type="file" id="file_upload">
+	<div id="image" style=' width:1000px; height:400px;background-repeat: no-repeat;background-position: center;background-size: contain;'/>
+	
+</body>
+</html>

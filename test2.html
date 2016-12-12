@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>傻逼刘志飞</title>
+	<script type="text/javascript">
+		//从新开始计时，如果已经在计时，则不响应
+		var isStart = false;
+		var runTime;
+		function start() {
+			if(!isStart){
+				isStart = true;
+				runTime = setInterval(updateTime,10)
+			}
+		}
+
+		//记录当前时间，如果在计时状态，每次点击都需要记录，如果未在计时状态，不响应
+		function stop() {
+			if(isStart){
+				var date = document.getElementById("date");
+				var div=document.createElement("div");
+				div.innerHTML=date.innerHTML;
+				var log= document.getElementById("timeLog");
+				log.appendChild(div);	
+			}
+			
+		}
+		//时间归零,重置
+		function reset() {
+			isStart = false;
+			clearInterval(runTime);
+			var date = document.getElementById("date");
+			date.innerHTML="00:00:00:00";
+			var log= document.getElementById("timeLog");
+			log.innerHTML="";
+		}
+		function updateTime() {
+			if(isStart){
+				var date = document.getElementById("date");
+				date.innerHTML=clock(date.innerHTML);	
+			}
+		}
+
+		//时间的增长
+		function clock(date) {
+			var time = date ;
+			var h , m , s , ms ;
+			var times = time.split(":");
+			if(times.size<4){
+				alert("时间有误");
+			}else{
+				h = +times[0];
+				m = +times[1];
+				s = +times[2];
+				ms = +times[3];
+				if(ms === 99){
+					ms = 0;
+					if(s === 59){
+						s = 0;
+						if(m === 59){
+							m = 0;
+							h = h + 1;
+						}else{
+							m = m + 1;
+						}
+					}else{
+						s = s + 1;
+					}
+				}else{
+					ms = ms + 1;
+				}
+			}
+			var result ;
+			result=addZero(h)+":"+addZero(m)+":"+addZero(s)+":"+addZero(ms);
+			return result;
+
+		}
+		//补零操作，数字变字符串
+		function addZero(param,num){
+			var count = num || 1;
+			var result = param.toString();
+			if(result.length<2){
+				for (var i=0;i<count;i++) {
+					result = "0" + result;
+				}
+			}
+			return result;
+		}
+		function refresh() {
+			var script=document.createElement('script');
+			//script.src='http://api.money.126.net/data/feed/0000001,1399001?callback=refreshPrice';
+		//	script.src='file:///E:/github/practice/common.js?user="ooo"';
+			document.getElementsByTagName('head')[0].appendChild(script);
+		}
+		function refreshPrice(data) {
+			console.log(data);
+			var divPrice=document.getElementById('price');
+			for (var x in data){
+				console.log(x);
+				console.log(data[x]);
+				var span=document.createElement('span');
+				span.innerHTML=data[x].name+":"+data[x].price+"<br>";
+				divPrice.appendChild(span);
+			}
+		}
+
+	</script>
+	<style type="text/css">
+		.timer{
+			height: 50px;
+		    width: 100%;
+		   /* position: absolute;*/
+		    vertical-align: middle;
+		    text-align: center;
+
+		}
+		.timer span{
+		    width: 200px;
+		    vertical-align: middle;
+		    text-align: center;
+		    font-size: -webkit-xxx-large;
+		}
+	</style>
+
+</head>
+<body>
+	<div class=timer><span>计时器</span></div>
+	<div class=timer><span id="date" >00:00:00:00</span></div>
+	<div class=timer>
+		<button value="开始" onclick="start()">开始</button>
+		<button value="计时" onclick="stop()">计时</button>
+		<button value="重置" onclick="reset()">重置</button>
+	</div>
+	<div class='timer' id='timeLog'>
+		
+
+	</div>
+
+
+	<div>
+		<input type="button" name="" value="刷新" onclick="refresh()">
+
+	</div>
+	<div id='price'>
+		
+	</div>
+</body>
+</html>

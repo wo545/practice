@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// var value="function onclick()\n{\nreturn upFileListGrid.deleteOne(\"upFileListGrid\",spanupFileListGrid1);\n}";
+		// value=value.replace(/\n/g,"")
+		// var reg1=value.match(/(\d)(\);)/);
+		// // var reg4=value.match('/\d/g');
+		// // var reg2=value.match('/\d\)/');
+		// // var reg2=value.match('/\d\);/');
+		// console.log(value);
+		// console.log(reg1);
+		// console.log(reg1[1]);
+		// // console.log(reg4);
+		// // console.log(reg2);
+		// // console.log(reg3);
+		// var strE='thisisenglish';
+		// var strZ='这是中文';
+		// console.log("英文字符的长度："+strE.length);
+		// console.log("中文字符的长度："+strZ.length);
+		// for(let i=0;i<4;i++){
+		// 	console.log(strE.charCodeAt(i));
+		// }
+		// for(let i=0;i<4;i++){
+		// 	console.log(strZ.charCodeAt(i));
+		// }
+		// console.log('|\xbfff|');
+
+
+		// var x=0.01;
+		// var y=0.02;
+		// var z=0.03;
+		// var a=0.04;
+		// var b=0.05;
+		// var c=b+a+x+y+z;
+		// c=c+c;
+		// c=c+10.89;
+		// console.log(c);
+		// console.log(c.toFixed(2));
+		var url='./test4.html';
+		var son;
+		window.onload= function(){
+			console.log(open1);
+			open1.attachEvent('onclick',openWindow);
+			close1.attachEvent('onclick',closeWindow);
+		}
+		function openWindow(){
+			console.log('in openWindow');
+			son=showModalDialog(url,window,"status:yes;help:0;close:0;dialogWidth:550px;dialogHeight:250px");
+		}
+		function closeWindow(){
+			console.log('in closeWindow');
+			console.log(son);
+			if(son){console.log(son); son.close()};
+		}
+	</script>
+</head>
+<body>
+  		<input type="button" name="open1" value='打开' id="open1">	
+  		<input type="button" name="close1" value='关闭' id="close1">	
+</body>
+</html>
+
+
+

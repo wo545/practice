@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试冒泡事件和事件捕获</title>
+	<script type="text/javascript">
+		function bodyclick(event){
+			console.log('bodyclick ....');
+			console.log(event.target);
+		}
+		function divclick(event){
+			console.log('divclick ....');
+			console.log(event.target);
+		//	event.stopPropagation();
+		}
+		function pclick(event){
+			//event.preventDefault()
+			console.log('pclick ....');
+			console.log(event.target);
+			return false;
+		}
+		function liClick(){
+			var ev=window.event||event;
+			console.log(ev.srcElement);
+			console.log(ev.target);
+		}
+		var i=1;
+		function addEve(target,type,fun) {
+			if(target.addEventListener){
+				target.addEventListener(type,fun);
+			}else{
+				target.attachEvent('on'+type,fun);
+			}
+		}
+		window.onload=function(){
+		//	var ul=ulparent;
+		//	addEve(ul,'click',liClick);
+			addEve(addli,'click',function(){
+				var li=document.createElement('li');
+				li.className='cliev';
+				li.innerHTML='哈喽这是，新加的'+i++;
+				ulparent.appendChild(li);
+			});
+
+		}
+
+	</script>
+</head>
+<body >
+	<!-- <div onclick="divclick(event)">
+		<p onclick="pclick(event)">hello</p>
+
+
+		<input type="button" name="ddddd" value="buooo">
+	</div>
+ -->
+	<ul id="ulparent">
+		<li class='cliev'>这是第一个</li>
+		<li class='cliev'>这是第二个</li>
+	</ul>
+	<button id='addli'>添加一个</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

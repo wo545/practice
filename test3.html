@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function memorize (f){
+			var cache={};
+			return function (){
+				var key=arguments.length+Array.prototype.join.call(arguments,',');
+				if(key in cache){
+					console.log("-1-1-1-");
+					return cache[key];
+				}else{
+					cache[key]=f.apply(this,arguments);
+					for(let i=1 ;i<6;i++){
+						console.log(cache["1"+i]);
+					}
+					return cache[key];
+				}
+			}
+		}
+		function gcd(a,b){
+			var t;
+			if(a<b)t=b,b=a,a=t;
+			while(b!=0)t=b,b=a%b,a=t;
+			return a;
+		}
+		var factorial =  memorize(function (n){
+
+			return (n<=1)?1:n*factorial(n-1);
+		});
+		var gcdmemo=memorize(gcd);
+		console.log(gcdmemo);
+		var x=gcdmemo(85,187);
+		console.log(x);
+		factorial(5);
+		console.log("5 is finish");
+		factorial(6);
+		window.onload=function (){
+			var g=document.getElementById("jj");
+			console.log(g);
+			g.checked=true;
+		}
+		$(document).ready(function(){
+			//
+		});
+
+		function corss(){
+			console.log("123");
+		}
+	</script>
+</head>
+<body>
+				<label id="all-checkbox">
+                    <input type="checkbox" name='fuxuan'/><span>全选</span>
+                    <input type="checkbox" name="fuxuan" id="jj"/>
+                </label>
+
+</body>
+</html>
