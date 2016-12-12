@@ -99,6 +99,15 @@
 			console.log(num);
 			console.log(count);
 		}
+
+		/**
+		*
+		*
+		*/
+		var x = {"query":{"count":1,"created":"2016-09-18T13:48:29Z","lang":"zh-cn","results":{"channel":{"units":{"distance":"mi","pressure":"in","speed":"mph","temperature":"F"},"title":"Yahoo! Weather - Beijing, Beijing, CN","link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2151330/","description":"Yahoo! Weather for Beijing, Beijing, CN","language":"en-us","lastBuildDate":"Sun, 18 Sep 2016 09:48 PM CST","ttl":"60","location":{"city":"Beijing","country":"China","region":" Beijing"},"wind":{"chill":"64","direction":"338","speed":"7"},"atmosphere":{"humidity":"76","pressure":"1016.0","rising":"0","visibility":"16.1"},"astronomy":{"sunrise":"5:59 am","sunset":"6:16 pm"},"image":{"title":"Yahoo! Weather","width":"142","height":"18","link":"http://weather.yahoo.com","url":"http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"},"item":{"title":"Conditions for Beijing, Beijing, CN at 08:00 PM CST","lat":"39.90601","long":"116.387909","link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2151330/","pubDate":"Sun, 18 Sep 2016 08:00 PM CST","condition":{"code":"29","date":"Sun, 18 Sep 2016 08:00 PM CST","temp":"64","text":"Partly Cloudy"},"forecast":[{"code":"39","date":"18 Sep 2016","day":"Sun","high":"69","low":"61","text":"Scattered Showers"},{"code":"32","date":"19 Sep 2016","day":"Mon","high":"76","low":"58","text":"Sunny"},{"code":"30","date":"20 Sep 2016","day":"Tue","high":"79","low":"55","text":"Partly Cloudy"},{"code":"34","date":"21 Sep 2016","day":"Wed","high":"80","low":"60","text":"Mostly Sunny"},{"code":"30","date":"22 Sep 2016","day":"Thu","high":"83","low":"63","text":"Partly Cloudy"},{"code":"30","date":"23 Sep 2016","day":"Fri","high":"82","low":"64","text":"Partly Cloudy"},{"code":"30","date":"24 Sep 2016","day":"Sat","high":"84","low":"68","text":"Partly Cloudy"},{"code":"30","date":"25 Sep 2016","day":"Sun","high":"84","low":"69","text":"Partly Cloudy"},{"code":"30","date":"26 Sep 2016","day":"Mon","high":"85","low":"66","text":"Partly Cloudy"},{"code":"30","date":"27 Sep 2016","day":"Tue","high":"86","low":"68","text":"Partly Cloudy"}],"description":"<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/29.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Partly Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Sun - Scattered Showers. High: 69Low: 61\n<BR /> Mon - Sunny. High: 76Low: 58\n<BR /> Tue - Partly Cloudy. High: 79Low: 55\n<BR /> Wed - Mostly Sunny. High: 80Low: 60\n<BR /> Thu - Partly Cloudy. High: 83Low: 63\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2151330/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>","guid":{"isPermaLink":"false"}}}}}};
+
+		var jsonStr=JSON.stringify(x,null,'   	');
+		console.log(jsonStr);
 	</script>
 </head>
 <body>

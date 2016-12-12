@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>thousandLine-two</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	// 	function Student(args){
+	// 		this.name=args;
+	// 		// this.hello=function(){
+	// 		// 	console.log("Hello "+name);
+	// 		// }
+	// 	}
+	// 	Student.prototype.hello=function(){
+	// 			console.log("Hello "+name);
+	// 		}
+	// 	var xm=new Student("xiaoming");
+	// 	var xh=new Student("xiaohong");
+	// 	var xl=new Function();
+	// 	console.log(xh.hello===xm.hello);
+	// 	console.log(Student.prototype);
+	// 	console.log(xm.constructor);
+	// 	console.log(Student.prototype.constructor);
+	// 	console.log("Student.prototype===xm.__proto__:"+(Student.prototype===xm.__proto__));
+	// 	console.log("Student===xm.:"+(Student===xm));
+	// 	console.log("Student.constructor===xm.constructor:"+(Student.constructor===xm.constructor));
+	// 	console.log("Student.constructor===Student.prototype.constructor:"+(Student.constructor===Student.prototype.constructor));
+	// 	console.log("Student.prototype.constructor===xm.constructor:"+(Student.prototype.constructor===xm.constructor));
+	// 	console.log("Student.constructor===function.constructor:"+(Student.constructor===Function.constructor));
+	// 	console.log("Student.constructor===function.prototype.constructor:"+(Student.constructor===Function.prototype.constructor));
+	// 	console.log(Function.prototype.constructor)
+	// 	console.log("Student.prototype.constructor==Student: "+(Student.prototype.constructor===Student))
+	// 	console.log(Student);
+	// 	console.log(Student.prototype);
+	// 	console.log(Student.__proto__);
+	// //	console.log(document.body.clientHeight);
+	// 	alert('appName = ' + navigator.appName + '\n' +
+ //      'appVersion = ' + navigator.appVersion + '\n' +
+ //      'language = ' + navigator.language + '\n' +
+ //      'platform = ' + navigator.platform + '\n' +
+ //      'userAgent = ' + navigator.userAgent);
+	// 	console.log("11111------"+'---------------------------------------------');// 'http'
+	// 	console.log("11111------"+location.protocol);// 'http'
+	// 	console.log("11111------"+location.host    );    // 'www.example.com'
+	// 	console.log("11111------"+location.port);     // '8080'
+	// 	console.log("11111------"+location.pathname);// '/path/index.html'
+	// 	console.log("11111------"+location.search);// '?a=1&b=2'
+	// 	console.log("11111------"+location.hash);// 'TOP'
+
+
+	</script>
+</head>
+<body>
+	<div id="test-div">
+	<div class="c-red">
+	    <p id="test-p">JavaScript</p>
+	    <p>Java</p>
+	  </div>
+	  <div class="c-red c-green">
+	    <p>Python</p>
+	    <p>Ruby</p>
+	    <p>Swift</p>
+	  </div>
+	  <div class="c-green">
+	    <p>Scheme</p>
+	    <p>Haskell</p>
+	  </div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 选择<p>JavaScript</p>:
+var js = document.getElementById("test-p");
+
+// 选择<p>Python</p>,<p>Ruby</p>,<p>Swift</p>:
+var arr = document.getElementById("test-div").querySelectorAll('.c-red.c-green>p');
+
+// 选择<p>Haskell</p>:
+var haskell = document.getElementById("test-div").querySelector('.c-green').lastElementChild;
+
+// 测试:
+if (!js || js.innerText !== 'JavaScript') {
+    alert('选择JavaScript失败!');
+} else if (!arr || arr.length !== 3 || !arr[0] || !arr[1] || !arr[2] || arr[0].innerText !== 'Python' || arr[1].innerText !== 'Ruby' || arr[2].innerText !== 'Swift') {
+    alert('选择Python,Ruby,Swift失败!');
+} else if (!haskell || haskell.innerText !== 'Haskell') {
+	console.log(haskell);
+    alert('选择Haskell失败!');
+} else {
+    alert('测试通过!');
+}
+
+
+</script>
+</html>

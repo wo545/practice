@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html</title>
+	<script type="text/javascript">
+		function clearString(ev){
+			var username =ev.target;
+			var data=username.value;
+			data=data.replace(/ /g,"");
+			username.value=data;
+			
+		}
+		function clear(data){
+			data = data.replace(/ /g,'');
+			return data;
+		}
+		document.getElementsByTagName('input');
+		// .onkeyup=function (ev){
+		// 	var username =ev.target;
+		// 	var data=username.value;
+		// 	data=data.replace(/ /g,"");
+		// 	username.value=data;
+		// 	console.log(data);
+		// }
+	</script>
+</head>
+<body>
+	<input  name="username" id="username" onkeyup="clearString(event)">
+	<input  name="username" id="ui" >
+	<input  name="username" id="usdername" >
+</body>
+</html>
