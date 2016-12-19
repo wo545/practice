@@ -139,25 +139,41 @@
 			padding: 10px 20px;
 
 		}
+
+		.attach {
+			float: left;
+			margin-right: 20px;
+			width: 120px;
+			text-decoration: none;
+			border: 1px solid #eaeaea;
+			/*background-color: #f0f0f0;*/
+			padding: 0 10px;
+		}
+		.attach:first-child{
+			margin-left: 20px;
+		}
+
+		.attach span {
+			display: inline-block;
+			margin-right: 5px;
+			float: left;
+			height: 30px;
+			line-height: 30px;
+			width: 85px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+		}
+		.attach img {
+			float: left;
+			width: 25px;
+			height: 25px;
+			margin-top: 2PX;
+		}
+
 	</style>
 	<script type="text/javascript">
-		// function btn(){
-		// 	var ev=event.srcElement;
-		// 	var btnClass="";
-		// 	if(ev.getAttribute){
-		// 		btnClass=ev.getAttribute("class");
-		// 	}else{
-		// 		btnClass=ev.className;
-		// 	}
-		// 	if(!btnClass){
-		// 		btnClass=ev.className;
-		// 	}
-		// 	if(btnClass.indexOf('span-btn-sel')>=0){
-		// 		ev.className=btnClass.replace('span-btn-sel','');
-		// 	}else{
-		// 		ev.className=btnClass+" span-btn-sel";
-		// 	}
-		// }
 		function btn(){
 			var ev=event.srcElement;
 			var btnClass="";
@@ -282,7 +298,19 @@
 							<td colspan="5" class="fs-bold bg-gray">附件信息</td>
 						</tr>
 						<tr>
-							<td colspan="5">   </td>
+							<td colspan="5" class="clear">   
+								<a href="" class="attach clear" title="aaa,jpg">
+									<img src="attach.png">
+									<span>aaa,jpg</span>
+								</a>
+								<a href="" class="attach clear" title="aaassss你好你好,jpg">
+									<img src="attach.png">
+									<span>aaassss你好你好,jpg</span>
+								</a>
+								<!-- <a class="attach" href="">aaa.jpg</a>
+								<a class="attach" href="">bbb.doc</a>
+								<a class="attach" href="">ccc.pdf</a> -->
+							</td>
 						</tr>
 						<tr>
 							<td colspan="5" class="fs-bold bg-gray">预算信息</td>
