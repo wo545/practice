@@ -129,7 +129,7 @@
 			border: 1px solid #a9a9a9;
 			padding: 0 20px;
 		}
-		.span-btn-sel{
+		.span-btn.active{
 			border: 1px solid #f06a11;
 			background-color: #f06a11;
 		}
@@ -174,7 +174,42 @@
 
 	</style>
 	<script type="text/javascript">
-		function btn(){
+		// function btn(){
+		// 	var ev=event.srcElement;
+		// 	var btnClass="";
+		// 	if(ev.getAttribute){
+		// 		btnClass=ev.getAttribute("class");
+		// 	}else{
+		// 		btnClass=ev.className;
+		// 	}
+		// 	if(!btnClass){
+		// 		btnClass=ev.className;
+		// 	}
+		// 	if(btnClass.indexOf('span-btn-sel')>=0){
+		// 		ev.className=btnClass.replace('span-btn-sel','');
+		// 	}else{
+		// 		ev.className=btnClass+" span-btn-sel";
+		// 	}
+		// }
+
+		// function btn(){
+		// 	var ev=event.srcElement;
+		// 	var btnClass="";
+		// 	if(ev.getAttribute){
+		// 		btnClass=ev.getAttribute("class");
+		// 	}else{
+		// 		btnClass=ev.className;
+		// 	}
+		// 	if(!btnClass){
+		// 		btnClass=ev.className;
+		// 	}
+		// 	if(btnClass.indexOf('span-btn-sel')>=0){
+		// 		ev.className=btnClass.replace('span-btn-sel','');
+		// 	}else{
+		// 		ev.className=btnClass+" span-btn-sel";
+		// 	}
+		// }
+		function btn() {
 			var ev=event.srcElement;
 			var btnClass="";
 			if(ev.getAttribute){
@@ -185,11 +220,14 @@
 			if(!btnClass){
 				btnClass=ev.className;
 			}
-			if(btnClass.indexOf('span-btn-sel')>=0){
-				ev.className=btnClass.replace('span-btn-sel','');
-			}else{
-				ev.className=btnClass+" span-btn-sel";
-			}
+			var spanArray = ev.parentNode.children;
+			for(var i=0;i<spanArray.length;i++){
+		  		if(spanArray[i]===ev){
+					ev.className="span-btn active";
+		  		} else {
+		  			spanArray[i].className=btnClass.replace('active','');
+		  		}
+		    }
 		}
 	</script>
 </head>
@@ -337,15 +375,17 @@
 				<div class="clear bg-gray margin-top-bottom">
 					<div class="float-left">
 						<span class="td-left">后续报销是否审批</span>
-						<span onclick="btn()">
-							<span class="span-btn span-btn-sel" >是</span>
-							<span class="span-btn" >否</span>	
+						<span>
+							<span class="span-btn active" onclick="btn()">是</span>
+							<span class="span-btn" onclick="btn()">否</span>	
 						</span>
 					</div>
 					<div class="float-right">
 						<span class="td-left">后续借款是否审批</span>
-						<span class="span-btn" onclick="btn()">是</span>
-						<span class="span-btn" onclick="btn()">否</span>
+						<span>
+							<span class="span-btn active" onclick="btn()">是</span>
+							<span class="span-btn" onclick="btn()">否</span>
+						</span>
 					</div>
 				</div>
 				<div>
@@ -374,4 +414,8 @@
 		</div>
 	</div>
 </body>
+
+
+
+
 </html>
